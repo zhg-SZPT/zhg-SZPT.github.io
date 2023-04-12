@@ -1,6 +1,8 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 module.exports = {
+  outputDir: 'dist',
+  publicPath: process.env.NODE_ENV === 'production'? '/zhg-SZPT.github.io/': '/',
   productionSourceMap: false,
   chainWebpack: (config) => {
     if (process.env.use_analyzer) {
